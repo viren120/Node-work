@@ -1,37 +1,42 @@
-// const fs  = require('fs');
-
-// const textWrite = fs.writeFileSync('one.txt' , 'hello viren');
-// console.log(textWrite);
-// const textRead = fs.readFileSync('one.txt', 'utf-8');
+// ---------------------------------READ-1-----------------------------------------------------------
+// const textRead = fs.readFileSync('four.txt', 'utf-8');
 // console.log(textRead);
+// ---------------------------------READ-2-----------------------------------------------------------
+// const textRead = fs.readFile('four.txt', 'utf-8');
+// console.log(textRead);
+// ---------------------------------Write-Update-1-----------------------------------------------------------
+// const fs = require('fs');
+
+// const textWrite = fs.writeFileSync('four.txt', 'hello yash');
+// console.log(textWrite);
+// ---------------------------------Write-2-----------------------------------------------------------
+// const fs = require('fs');
+
+// const textWrite = fs.writeFile('six.txt', 'hello yash');
+// console.log(textWrite);
+// ---------------------------------Write_Update-2-----------------------------------------------------------
+// var fs = require('fs');
+
+// fs.appendFile('mynewfile2.txt', 'Hello yash!', function (err) {
+//   if (err) throw err;
+// });
 // --------------------------------------------------------------------------------------------
-
-// var http = require('http');
-
-// const hostname = '127.0.0.1';
-// const port = 8080;
-
-// const server = http.createServer(function (req, res) {
-//     res.writeHead(200 , {'content-type' : 'text/html'});
-//     res.write('Hello v  ');
-//     res.end();
-//   });
-
-// server.listen(port, hostname, () => {
-//   console.log(`http://${hostname}:${port}`);
-// });
-// -------------------------------------------------------------------------------------------------
+ 
+// --------------------------------------CREATE-1-& WRITE-----------------------------------------------------------
 // var fs = require('fs');
 
-// fs.appendFile('mynewfile1.txt', 'Hello content!', function (err) {
+// fs.appendFile('mynewfile2.txt', 'Hello yash!', function (err) {
 //   if (err) throw err;
-//   console.log('Saved!');
 // });
-// -------------------------------------------------------------------------------------------------
+// ------------------------------------CREATE-2-& WRITE-------------------------------------------------------------
+// const fs = require('fs');
+
+// const textWrite = fs.writeFileSync('three.txt', 'hello yash');
+// console.log(textWrite);
+// ------------------------------------CREATE-3---------------------------------------------------------------------
 // var fs = require('fs');
-// fs.open('mynewfile2.txt', 'w', function (err, file) {
+// fs.open('mynewfile4.txt', 'w', function (err, file) {
 //   if (err) throw err;
-//   console.log('Saved!');
 // });
 // -------------------------------------------------------------------------------------------------
 // var fs = require('fs');
@@ -120,7 +125,7 @@
 
 // const index = fs.readFileSync('./index.html');
 // const json = JSON.parse(fs.readFileSync('./index.json'));
-// const product = json.products[1];  
+// const product = json.products[1];
 
 // const server = http.createServer((req, res) => {
 //   console.log(req.url);
@@ -130,13 +135,13 @@
 //       res.setHeader('content-type', 'text/json');
 //       res.end(index);
 //       break;
- 
+
 //     case '/api':
 //       res.setHeader('content-type', 'text/json');
 //       res.end(JSON.stringify(json));
 //       break;
 
-//     case '/product': 
+//     case '/product':
 //       res.setHeader('content-type', 'text/html');
 //       let modifyIndex = index.replace('**phoneName**', product.title);
 //       res.end(modifyIndex);
@@ -153,36 +158,36 @@
 //   console.log(`http://${hostname}:${port}`);
 // });
 // -------------------------------------------------------------------------------------------------
-var http = require('http');
-const fs = require('fs');
-var formidable = require('formidable');
-const hostname = '127.0.0.1';
-const port = 8080;
+// var http = require('http');
+// const fs = require('fs');
+// var formidable = require('formidable');
+// const hostname = '127.0.0.1';
+// const port = 8080;
 
-const server = http.createServer(function (req, res) {
-  if (req.url == '/fileupload') {
-    var form = new formidable.IncomingForm();
-    form.parse(req, function (err, fields, files) {
-      var oldpath = files.filetoupload.filepath;
-      var newpath = 'C:/Users/Your Name/' + files.filetoupload.originalFilename;
-      fs.rename(oldpath, newpath, function (err) {
-        if (err) throw err;
-        res.write('File uploaded and moved!');
-        res.end();
-      });
- });
-  } else {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.write('<form action="fileupload" method="post" enctype="multipart/form-data">');
-    res.write('<input type="file" name="filetoupload"><br>');
-    res.write('<input type="submit">');
-    res.write('</form>');
-    return res.end();
-  }
-})
-  server.listen(port, hostname, () => {
-  console.log(`http://${hostname}:${port}`);
-});
+// const server = http.createServer(function (req, res) {
+//   if (req.url == '/fileupload') {
+//     var form = new formidable.IncomingForm();
+//     form.parse(req, function (err, fields, files) {
+//       var oldpath = files.filetoupload.filepath;
+//       var newpath = 'C:/Users/Your Name/' + files.filetoupload.originalFilename;
+//       fs.rename(oldpath, newpath, function (err) {
+//         if (err) throw err;
+//         res.write('File uploaded and moved!');
+//         res.end();
+//       });
+//  });
+//   } else {
+//     res.writeHead(200, {'Content-Type': 'text/html'});
+//     res.write('<form action="fileupload" method="post" enctype="multipart/form-data">');
+//     res.write('<input type="file" name="filetoupload"><br>');
+//     res.write('<input type="submit">');
+//     res.write('</form>');
+//     return res.end();
+//   }
+// })
+//   server.listen(port, hostname, () => {
+//   console.log(`http://${hostname}:${port}`);
+// });
 // -------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------
