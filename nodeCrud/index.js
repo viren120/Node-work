@@ -11,7 +11,6 @@ app.use(bodyParser.json());
 app.use('/users' , usersRouter);
 
 app.get('/', (req, res) => {
-  console.log('TEST');
   res.end('hello from HomePage'); 
 });
 app.listen(port, () => {
