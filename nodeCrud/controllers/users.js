@@ -1,5 +1,21 @@
 import { v4 as uuid } from 'uuid';
-let users = [];
+let users = [
+  {
+    firstname: 'Viren',
+    lastname: 'Patadiya',
+    age: 21,
+  },
+  {
+    firstname: 'Deep',
+    lastname: 'Prajapati',
+    age: 22,
+  },
+  {
+    firstname: 'Shiv',
+    lastname: 'Sagar',
+    age: 23,
+  },
+];
 
 export const getUsers = (req, res) => {
   // console.log(`Users name: ${users.firstname}`);
